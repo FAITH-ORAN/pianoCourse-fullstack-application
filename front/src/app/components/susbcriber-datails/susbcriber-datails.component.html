@@ -1,0 +1,18 @@
+<div class="mt-5 mb-5" fxLayout="row wrap" fxLayoutAlign="space-evenly center " >
+    <div  fxFlex="40">
+        <mat-card class="example-card">
+            <mat-card-title-group>
+            <mat-card-title>{{subscriber.firstName| titlecase}} {{subscriber.lastName| titlecase}}</mat-card-title>
+            <mat-card-subtitle>Abonné</mat-card-subtitle>
+            <img class="image" mat-card-md-image src="https://static.vecteezy.com/ti/vecteur-libre/p3/2275847-male-avatar-profil-icone-de-souriant-caucasien-homme-vectoriel.jpg" >
+            </mat-card-title-group>
+            <mat-card-content>
+            <p><b>Tel:</b> 0{{subscriber.phone}}</p>
+            <p><b>Email:</b>{{subscriber.email}}</p>
+            <p><b>Jour de présence:</b>{{subscriber.daysOfTraining}}</p>
+            </mat-card-content>
+        
+        </mat-card>
+    </div>
+    </div>
+

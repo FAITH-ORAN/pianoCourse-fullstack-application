@@ -1,0 +1,41 @@
+
+<div class="container mt-5 liste">
+    <div class="d-flex justify-content-between">
+        <h3 class="text-dark ">List des abonnés</h3>
+        <button (click)="goToAddSubForm()"  class="float-left btnStyleMaterial" mat-raised-button color="primary" >Ajouter</button>
+    </div>
+    <div class="mt-5" fxLayout="row wrap" fxLayoutAlign="space-evenly center " >
+    <div  fxFlex="40"*ngFor="let subscriber of subscribers">
+        <mat-card class="example-card">
+            <mat-card-title-group>
+            <mat-card-title>{{subscriber.firstName| titlecase}} {{subscriber.lastName| titlecase}}</mat-card-title>
+            <mat-card-subtitle>Abonné</mat-card-subtitle>
+            <img class="image" mat-card-md-image src="https://static.vecteezy.com/ti/vecteur-libre/p3/2275847-male-avatar-profil-icone-de-souriant-caucasien-homme-vectoriel.jpg" >
+            </mat-card-title-group>
+            <mat-card-content>
+            <p><b>Tel:</b> 0{{subscriber.phone}}</p>
+            <p><b>Email:</b>{{subscriber.email}}</p>
+            <p><b>Jour de présence:</b>{{subscriber.daysOfTraining}}</p>
+            </mat-card-content>
+          
+            <div class="d-flex justify-content-end ">
+                <a class=" bg-primary text-light rounded p-1 btnBlue " (click)="updateSubscriber(subscriber.id)" routerLink="subscriber">
+                    <span class="material-icons">
+                        edit
+                    </span>
+                </a>
+                <a class=" bg-danger text-light rounded p-1 btnRed " (click)="deleteSubscriber(subscriber.id)" routerLink="subscriber">
+                        <span class="material-icons">delete</span>
+                </a>
+                <a class=" bg-warning text-light rounded p-1 " (click)="viewDetails(subscriber.id)" routerLink="subscriber">
+                    <span class="material-icons">info</span>
+                </a>
+             
+            </div>
+        </mat-card>
+    </div>
+    </div>
+
+</div>
+
+  
